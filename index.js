@@ -34,7 +34,11 @@ ${tests}
 ## Questions
 For any questions, please use the following contact methods:
 GitHub: ${gitHub}
-Email: ${emailAddress}`
+Email: ${emailAddress}
+
+## Credits
+Badges recieved from the following location
+https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba`
 ;
 
 inquirer
@@ -63,7 +67,7 @@ inquirer
         type: 'list',
         name: 'license',
         message: 'Please choose a license:',
-        choices: ['Option 1', 'Two', 'Three', 'Four'],
+        choices: ['Apache 2.0 License [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)', 'Boost Software License 1.0 [![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)', '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)', 'None'],
     },
     {
         type: 'input',
@@ -88,25 +92,12 @@ inquirer
 
 ])
 
+
+
 .then((answers) => {
     const readMe = generateREADME(answers);
-
     //create the new readme file
-    fs.appendFile('README2.md', readMe, (err) =>
+    fs.appendFile('README.md', readMe, (err) =>
     err ? console.error(err) : console.log('The README has been created!')
     );
 });
-
-// TODO: Create an array of questions for user input
-//const questions = [];
-
-// TODO: Create a function to write README file
-//function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-//function init() {}
-
-// Function call to initialize app
-//init();
-
-
