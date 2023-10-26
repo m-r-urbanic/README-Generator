@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-
+// this is the asyncronous template that will be populated with the users inputs. It also has some canned wording, such as credits, that is the same each time
 const generateREADME = ({ title,description,installation,usage,license,contributing,tests,gitHub,emailAddress }) =>
 `## ${title}
 
@@ -41,6 +41,7 @@ Badges recieved from the following location
 https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba`
 ;
 
+// Create the prompts that the user will see in the command line
 inquirer
   .prompt([
     {
@@ -63,6 +64,7 @@ inquirer
         name: 'usage',
         message: 'Please input your project contribution guidelines:',
     },
+    // note: this is a list instead of user typed input like the rest of the options
     {
         type: 'list',
         name: 'license',
@@ -93,7 +95,7 @@ inquirer
 ])
 
 
-
+// asyncronously retrive the inputs provided by the user and print them to the markdown file
 .then((answers) => {
     const readMe = generateREADME(answers);
     //create the new readme file
