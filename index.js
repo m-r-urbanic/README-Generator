@@ -1,6 +1,42 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+
+const generateREADME = ({ title,description,installation,usage,license,contributing,tests,gitHub,emailAddress }) =>
+`## ${title}
+
+## Description
+${description}
+
+## Table of contents
+[Installation](#installation)
+[Usage](#usage)
+[License](#license)
+[Contributing](#contributing)
+[Tests](#tests)
+[Qusetions](#questions)
+
+## Installation
+${installation}
+
+## Usage
+${usage}
+
+## License
+${license}
+
+## Contributing
+${contributing}
+
+## Tests
+${tests}
+
+## Questions
+For any questions, please use the following contact methods:
+GitHub: ${gitHub}
+Email: ${emailAddress}`
+;
+
 inquirer
   .prompt([
     {
@@ -52,16 +88,13 @@ inquirer
 
 ])
 
-import {generateMarkdown} from './utils/generateMarkdown.js';
+.then((answers) => {
+    const readMe = generateREADME(answers);
 
-then((answers) => {
-    
-    const readMe = generateMarkdown(answers);
     //create the new readme file
     fs.appendFile('README2.md', readMe, (err) =>
     err ? console.error(err) : console.log('The README has been created!')
-);
-
+    );
 });
 
 // TODO: Create an array of questions for user input
