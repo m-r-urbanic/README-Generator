@@ -1,8 +1,7 @@
-## README Generator
+## README
 
 ## Description
-Create a README using command line prompts!
-
+Description
 
 ## Table of contents
 [Installation](#installation)
@@ -13,24 +12,24 @@ Create a README using command line prompts!
 [Qusetions](#questions)
 
 ## Installation
-N/A
+Install
 
 ## Usage
-N/A
+Contribute
 
 ## License
 MIT License [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Contributing
-N/A
+Cotribute
 
 ## Tests
-N/A
+Test
 
 ## Questions
 For any questions, please use the following contact methods:
-GitHub: m-r-urbanic
-Email: fakeemail@gmail.com
+GitHub: GitHub
+Email: Email
 
 ## Credits
 Badges recieved from the following location
