@@ -2,31 +2,16 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 
-const generateHTML = ({ title,description,installation,usage,license,contributing,tests,gitHub,emailAddress }) =>
-  `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-  <title>Document</title>
-</head>
-<body>
-  <header class="p-5 mb-4 header bg-light">
-    <div class="container">
-      <div>${title}</div>
-      <div>${description}</div>
-      <div>${installation}</div>
-      <div>${usage}</div>
-      <div>${license}</div>
-      <div>${contributing}</div>
-      <div>${tests}</div>
-      <div>${gitHub}</div>
-      <div>${emailAddress}</div>
-    </div>
-  </header>
-</body>
-</html>`;
+const generateREADME = ({ title,description,installation,usage,license,contributing,tests,gitHub,emailAddress }) =>
+    `##${title}
+    ${description}
+    ${installation}
+    ${usage}
+    ${license}
+    ${contributing}
+    ${tests}
+    ${gitHub}
+    ${emailAddress}`;
 
 inquirer
   .prompt([
@@ -80,15 +65,10 @@ inquirer
 ])
 
 .then((answers) => {
-    const htmlPage = generateHTML(answers);
-
-
-    //fs.writeFile('index.html', htmlPage, (err) =>
-    //err ? console.log(err) : console.log('TEST!')
-    //);
+    const readMe = generateREADME(answers);
 
     //create the new readme file
-    fs.appendFile('README2.md', htmlPage, (err) =>
+    fs.appendFile('README2.md', readMe, (err) =>
     err ? console.error(err) : console.log('The README has been created!')
     );
 });
