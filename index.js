@@ -3,15 +3,39 @@ const fs = require('fs');
 
 
 const generateREADME = ({ title,description,installation,usage,license,contributing,tests,gitHub,emailAddress }) =>
-    `##${title}
-    ${description}
-    ${installation}
-    ${usage}
-    ${license}
-    ${contributing}
-    ${tests}
-    ${gitHub}
-    ${emailAddress}`;
+`##${title}
+
+## Description
+${description}
+
+## Table of contents
+[Installation](#installation)
+[Usage](#usage)
+[License](#license)
+[Contributing](#contributing)
+[Tests](#tests)
+[Qusetions](#questions)
+
+## Installation
+${installation}
+
+## Usage
+${usage}
+
+## License
+${license}
+
+## Contributing
+${contributing}
+
+## Tests
+${tests}
+
+## Questions
+For any questions, please use the following contact methods:
+GitHub: ${gitHub}
+Email: ${emailAddress}`
+;
 
 inquirer
   .prompt([
