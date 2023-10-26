@@ -83,14 +83,14 @@ inquirer
     const htmlPage = generateHTML(answers);
 
 
-    fs.writeFile('index.html', htmlPage, (err) =>
-    err ? console.log(err) : console.log('TEST!')
-    );
-
-    // create the new readme file
-    //fs.appendFile('README2.md', `${process.argv[0]}\n`, (err) =>
-    //err ? console.error(err) : console.log('The README has been created!')
+    //fs.writeFile('index.html', htmlPage, (err) =>
+    //err ? console.log(err) : console.log('TEST!')
     //);
+
+    //create the new readme file
+    fs.appendFile('README2.md', htmlPage, (err) =>
+    err ? console.error(err) : console.log('The README has been created!')
+    );
 });
 
 // TODO: Create an array of questions for user input
