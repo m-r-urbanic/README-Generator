@@ -2,7 +2,7 @@
 
 ## Description
 Create a README using command line prompts!
-Link to usage video - https://drive.google.com/file/d/1KhmPv4xCNG8QbZY8-wbwp-cD9njK7Cm9/view
+
 
 ## Table of contents
 [Installation](#installation)
