@@ -50,9 +50,12 @@ inquirer
         message: 'Please provide your email address:',
     },
 
-  ])
+])
 
-
+// create the new readme file
+fs.appendFile('README2.md', `${process.argv[0]}\n`, (err) =>
+  err ? console.error(err) : console.log('The README has been created!')
+);
 
 // TODO: Create an array of questions for user input
 //const questions = [];
